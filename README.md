@@ -10,19 +10,21 @@ Things you may want to cover:
 * PostgreSQl
 * Table
     - User
-        + :name string
-        + :email string
-        + :password string
+        + name:string
+        + email:string
+        + password:string
     - Task
-        + :title string
-        + :content text
-        + :start_time datetime
-        + :end_time datetime
-        + :priority integer
-        + :status integer
-        + :user_id integer
+        + title:string
+        + content:text
+        + start_time:datetime
+        + end_time:datetime
+        + priority:integer
+        + status:integer
+        + user_id:integer
     - Tag
-        + :task_id integer
-        + :tag string
+        + tag:string
+    - TaskTag
+        + task_id:integer
+        + tag_id:integer
 
 
