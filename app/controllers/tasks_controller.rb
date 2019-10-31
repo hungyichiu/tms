@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
   
   def index
-    @tasks = Task.all
+    @tasks = Task.limit(10)
   end
 
   def new
@@ -19,12 +19,10 @@ class TasksController < ApplicationController
     end     
   end
 
-  def show
-    # @task = Task.find(params[:id])  
+  def show 
   end
 
   def edit
-    # @task = Task.find(params[:id])
   end
 
   def update
@@ -40,7 +38,7 @@ class TasksController < ApplicationController
     if @task.destroy
       redirect_to tasks_path, notice: "Delete Success!"
     else
-      
+      redirect_to tasks_path, notice: "Delete Failed!"
     end
   end
 
