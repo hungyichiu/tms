@@ -210,3 +210,11 @@ zh-TW:
       long: "%Y年%m月%d日 %H:%M"
       short: "%m月%d日 %H:%M"
     pm: 下午
+  tasks:
+    create: 
+      success: '新增任務成功'
+    upsdate:
+      success: '更新任務成功'
+    destroy:
+      success: '任務已刪除'
+      faild: '任務刪除失敗'
