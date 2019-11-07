@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
   
   def index
-    @tasks = Task.limit(10).order(created_at: :ASC )
+    @tasks = Task.order(created_at: :ASC )
   end
 
   def new

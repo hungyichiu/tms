@@ -211,6 +211,14 @@ zh-TW:
       short: "%m月%d日 %H:%M"
     pm: 下午
   tasks:
+    task_list: '任務列表'
+    new_task: '新增任務'
+    edit_task: '編輯任務'
+    title: '任務名稱'
+    content: '任務內容'
+    edit: '編輯'
+    delete: '刪除'
+    delete_confirm: "確認要刪除任務嗎？"
     create: 
       success: '新增任務成功'
     upsdate:
