@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
   
   def index
-    @tasks = Task.limit(10)
+    @tasks = Task.order(created_at: :ASC )
   end
 
   def new
@@ -13,7 +13,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params) 
 
     if @task.save
-      redirect_to tasks_path, notice: "Add Success!"
+      redirect_to tasks_path, notice: t('.success')
     else
       render :new
     end     
@@ -27,7 +27,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to tasks_path, notice: "Update Success!"
+      redirect_to tasks_path, notice: t('.success')
     else
       render :edit
     end     
@@ -36,9 +36,9 @@ class TasksController < ApplicationController
 
   def destroy
     if @task.destroy
-      redirect_to tasks_path, notice: "Delete Success!"
+      redirect_to tasks_path, notice: t('.success')
     else
-      redirect_to tasks_path, notice: "Delete Failed!"
+      redirect_to tasks_path, notice: t('.faild')
     end
   end
 
