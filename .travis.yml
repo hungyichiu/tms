@@ -1,4 +1,4 @@
-sudo: required
+# sudo: required
 addons:
   # postgresql: "10"
   # apt:
