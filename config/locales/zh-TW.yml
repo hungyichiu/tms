@@ -216,12 +216,14 @@ zh-TW:
     edit_task: '編輯任務'
     title: '任務名稱'
     content: '任務內容'
+    create_time: '建立時間'
+    end_time: ' 結束時間'
     edit: '編輯'
     delete: '刪除'
     delete_confirm: "確認要刪除任務嗎？"
     create: 
       success: '新增任務成功'
-    upsdate:
+    update:
       success: '更新任務成功'
     destroy:
       success: '任務已刪除'
