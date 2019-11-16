@@ -1,15 +1,10 @@
 class TasksController < ApplicationController
-  helper_method :sort_column, :sort_direction
   before_action :find_task, only: [:show, :edit, :update, :destroy]
+  helper_method :sort_column, :sort_direction
   
   def index
-    # if params[:order_by] == 'created_at'
-    #   @tasks = Task.order( Arel.sql("#{params[:order_by]} DESC") )
-    # else
-    #   @tasks = Task.order( Arel.sql"#{params[:order_by]} " )
-    # end
-    # @tasks = Task.order( Arel.sql(sort_column + " " + sort_direction))
-    @tasks = Task.order(sort_column + " " + sort_direction)
+    # @tasks = Task.order(sort_column + " " + sort_direction)  
+    @tasks =Task.order_by(params)
   end
 
   def new
