@@ -23,14 +23,14 @@ RSpec.feature "Tasks", type: :feature do
     task1
     task2
     visit root_path
-    
+
     click_link '結束時間'
 
     within 'tbody tr:nth-child(1) td:nth-child(1)' do
-        expect(page).to have_content("T2")
+        expect(page).to have_content("T1")
     end
     within 'tbody tr:nth-child(2) td:nth-child(1)' do
-      expect(page).to have_content("T1")
+      expect(page).to have_content("T2")
     end
   end
 
