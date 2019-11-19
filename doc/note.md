@@ -13,3 +13,17 @@ def sortable(column, title = nil)
 end
 ```
 
+
+```ruby
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t('tasks.title') %></th>
+      <th><%= sortable "created_at", t('tasks.create_time') %></th>
+      <th><%= sortable "end_time", t('tasks.end_time') %></th>
+      <th>下一步</th>
+    </tr>
+  </thead>
+  <tbody>
+
+```
