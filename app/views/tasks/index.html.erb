@@ -1,10 +1,35 @@
 <h1><%= t("tasks.task_list") %></h1>
 
-<% @tasks.each do |task| %>
-  <ul>
-    <li><%= link_to task.title, task_path(task) %> <%= task.created_at %> <%= link_to t("tasks.edit"), edit_task_path(task) %> <%= link_to t("tasks.delete"), task_path(task), method:'delete',data: {confirm: t("tasks.delete_confirm")} %></li>
-  </ul>
-
-<% end %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"><%= t('tasks.title') %></th>
+      <th scope="col"><%= sortable "created_at", t('tasks.create_time') %></th>
+      <th scope="col"><%= sortable "end_time", t('tasks.end_time') %></th>
+      <th scope="col">下一步</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+    <tr>
+      <td>
+        <%= task.id %>
+        <%= link_to task.title, task_path(task) %>
+      </td>
+      <td>
+        <%= task.created_at %>
+      </td>
+      <td>
+        <%= task.end_time %>
+      </td>
+      <td>
+        <%= link_to t("tasks.edit"), edit_task_path(task) %> <%= link_to t("tasks.delete"), task_path(task), method:'delete',data: {confirm: t("tasks.delete_confirm")} %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to t("tasks.new_task"), new_task_path %>
+
+   

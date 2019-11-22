@@ -27,4 +27,21 @@ Things you may want to cover:
         + task_id:integer
         + tag_id:integer
 
+HEROKU 部署
+
+1. 在專案目錄底下執行
+```
+heroku create
+```
+
+2. 將專案推上heroku
+```
+git push heroku master
+```
+
+3. 因為使用Postgrsql 所以邀依序執行下列指令
+```
+heroku run rails db:create
+heroku run rails db:migrate
+```
 
